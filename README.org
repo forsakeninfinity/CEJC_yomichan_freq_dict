@@ -1,4 +1,4 @@
-#+TITLE: Corpus Of Everyday Japanese Conversation Yomichan Frequncy Dictionary
+#+TITLE: Corpus of Everyday Japanese Conversation Yomichan Frequency Dictionary
 
 * What is this?
 
@@ -106,7 +106,7 @@ should install it by sideloading the following file instead:
 https://github.com/FooSoft/yomichan/releases/download/22.10.23.0/a708116f79104891acbd-22.10.23.0.xpi
 
 See https://github.com/themoeway/yomitan for a heavily WIP successor that isn't
-yet ready for the public.\
+yet ready for the public.
 
 * Credits
 
