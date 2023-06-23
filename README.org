@@ -1,0 +1,121 @@
+#+TITLE: Corpus Of Everyday Japanese Conversation Yomichan Frequncy Dictionary
+
+* What is this?
+
+This repository contains frequency dictionaries for Japanese terms that can be
+imported into Yomichan (or any software that supports Yomichan style frequency
+dicts). The terms are ranked differently based on different contexts / domains
+so you can pick whichever ones interest you although I suspect the overall one
+is the most useful one for most people.
+
+The dictionaries here are generated from the datasource by running [[file:make_cejc_freq_dicts_from_tsv.py][the python
+script]] in the repository. You will want to be on some newer version of Python3
+(3.10 and above) and you will need to install =pandas= and =jaconv= to run it
+but you may as well run the following if you wish to recreate the dictionaries
+from scratch for some reason (do it in a virtual environment if you really care
+but the dependencies are common enough that you may want them in your system
+python too anyway):
+#+begin_src sh
+pip install -r requirements.txt
+python3 -i make_cejc_freq_dicts_from_tsv.py
+#+end_src
+
+Running the script produces everything in the repository except for the source
+data, git metadata, this README and the script itself. The produced JSON files
+for the dictionaries are inside [[file:dicts][dicts/]] with a folder per domain. Zip files that
+you can actually install from yomichan are inside [[file:releases][releases/]].
+
+There are a whole bunch of different dictionaries produced as the project
+ranked words differently based on different domains and age/gender of speakers
+etc. I don't know who may care for all of these, but knock yourself out if you
+do care for specific ones. I would recommend the overall one at least then pick
+whichever domain interests you in particular if you care for more. See the next
+section for a table of domains of interest or just browse the releases
+yourself.
+
+I highly doubt this can be realistically repurposed readily to parse another
+source but if there is a future version of the CEJC project and they keep the
+same data format, it may just be reusable. It may just be of interest for ideas
+or reference purposes though I guess.
+
+* Potentially interesting domains
+
+This table just enlists some of the more interesting domains with direct links
+to the zipfiles to download and import into yomichan.
+
+| Domain             | Description                                                | Download Link                                                                                                                                                                                                            |
+| Combined / Overall | Frequency without considering domains and other qualifiers | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation.zip][Corpus of Everyday Japanese Conversation.zip]]                                     |
+| 男性               | Male conversations without considering age                 | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(男性).zip][Corpus of Everyday Japanese Conversation (男性).zip]]                     |
+| 女性               | Female conversations without considering age               | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(女性).zip][Corpus of Everyday Japanese Conversation (女性).zip]]                     |
+| 交通機関           | Transportation                                             | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(交通機関).zip][Corpus of Everyday Japanese Conversation (交通機関).zip]]             |
+| 会議・会合         | Conferences & Meetings                                     | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(会議・会合).zip][Corpus of Everyday Japanese Conversation (会議・会合).zip]]         |
+| 公共商業施設       | Public commercial facilities                               | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(公共商業施設).zip][Corpus of Everyday Japanese Conversation (公共商業施設).zip]]     |
+| 学校               | School                                                     | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(学校).zip][Corpus of Everyday Japanese Conversation (学校).zip]]                     |
+| 室内               | Indoors                                                    | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(室内).zip][Corpus of Everyday Japanese Conversation (室内).zip]]                     |
+| 屋外               | Outdoors                                                   | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(屋外).zip][Corpus of Everyday Japanese Conversation (屋外).zip]]                     |
+| 授業・レッスン     | Class / Lesson                                             | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(授業・レッスン).zip][Corpus of Everyday Japanese Conversation (授業・レッスン).zip]] |
+| 用談・相談         | Chat / Consultation                                        | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(用談・相談).zip][Corpus of Everyday Japanese Conversation (用談・相談).zip]]         |
+| 職場               | Workplace                                                  | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(職場).zip][Corpus of Everyday Japanese Conversation (職場).zip]]                     |
+| 自宅               | Inside one's own home                                      | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(自宅).zip][Corpus of Everyday Japanese Conversation (自宅).zip]]                     |
+| 雑談               | Small talk                                                 | [[https://github.com/forsakeninfinity/CEJC_yomichan_freq_dict/raw/main/releases/Corpus%20of%20Everyday%20Japanese%20Conversation%20(雑談).zip][Corpus of Everyday Japanese Conversation (雑談).zip]]                     |
+
+* Source
+
+** Project Website (in English)
+
+https://www.ninjal.ac.jp/english/research/cr-project/project-3/institute/spoken-language/
+
+*** Summary from website
+
+#+begin_quote
+The Corpus of Everyday Japanese Conversation (CEJC) is a vocabulary and word
+count table based on 200 hours of recorded data (approximately from April 2016
+to 2020).
+
+Our project will develop a large-scale corpus of Japanese everyday conversation
+in a balanced manner. Since informants record their conversations in everyday
+situations by themselves, naturally occurring conversations can be
+collected. To build an empirical foundation for the corpus design, we conducted
+a survey of ordinary conversational behavior of about 250 adults."
+
+Since there were several ranks included in the file, the overall rank was
+chosen to generate this frequency dictionary.
+#+end_quote
+
+** Data download URL
+
+[[https://www2.ninjal.ac.jp/conversation/cejc/cejc-wc.html][Corpus of Everyday Japanese Conversation]]
+
+The actual source file is =2_cejc_frequencylist_suw_token.tsv= which is inside
+the 2nd zip file ([[https://www2.ninjal.ac.jp/conversation/cejc/data/CEJC%E7%9F%AD%E5%8D%98%E4%BD%8D%E8%AA%9E%E5%BD%99%E8%A1%A8_%E6%9B%B8%E5%AD%97%E5%BD%A2%E5%88%A5_%E7%99%BA%E9%9F%B3%E5%BD%A2%E5%88%A5_ver202209.zip][CEJC短単位語彙表_語彙素のみ_語形別_ver202209.zip]]) listed in
+the page, i.e., the 3rd file from the top.
+
+You can also find [[file:2_cejc_frequencylist_suw_token.tsv][it committed to the repository here]] fwiw. I doubt the
+original authors have an issue with hosting the file elsewhere given that this
+came out of academic research, but if the original authors do have an issue
+with it, let me know and I will remove it.
+
+* About Yomichan
+
+Yomichan is a pop-up dictionary for Japanese which is no longer in active
+development but the archived repository is still available at
+https://github.com/FooSoft/yomichan
+
+Note that the extension released to the FireFox store is an older version. You
+should install it by sideloading the following file instead:
+https://github.com/FooSoft/yomichan/releases/download/22.10.23.0/a708116f79104891acbd-22.10.23.0.xpi
+
+See https://github.com/themoeway/yomitan for a heavily WIP successor that isn't
+yet ready for the public.\
+
+* Credits
+
++ [[https://github.com/n-manas/Corpus-of-Everyday-Japanese-Conversation---Yomichan-Frequency-Dictionary][n-manas released a version of this earlier in 2023]] but it doesn't account for
+  different readings and only contains a subset of the domains
++ [[https://github.com/MarvNC/yomichan-dictionaries][MarvNC's listing of dictionaries]] is how I actually found the dict and the
+  data source and I was gently nudged by him to parse it again for readings I
+  guess lol
++ [[https://github.com/MarvNC/JP-Resources/blob/main/frequency/backfill.py][Aquafina-water-bottle]] for making frequency sorting a thing that people
+  think about. I was working on something tangentially related to that
+  wherefrom I got sidetracked into doing something more directly related to
+  that and then further sidetracked into doing this... oh well
